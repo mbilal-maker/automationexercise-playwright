@@ -1,0 +1,217 @@
+[
+  {
+    "description": "  As a new user\n  I want to register on the website\n  So that I can create and manage my account",
+    "elements": [
+      {
+        "description": "",
+        "id": "user-registration-on-automation-exercise-website;submit-contact-us-form-successfully",
+        "keyword": "Scenario",
+        "line": 53,
+        "name": "Submit Contact Us form successfully",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 809623499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the browser is launched",
+            "match": {
+              "location": "features\\stepDefination\\steps.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12407199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "the user navigates to \"https://automationexercise.com/\"",
+            "match": {
+              "location": "features\\stepDefination\\steps.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2619414999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "the home page is visible successfully",
+            "match": {
+              "location": "features\\stepDefination\\steps.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 44704700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 55,
+            "name": "the user clicks on Contact Us button",
+            "match": {
+              "location": "features\\stepDefination\\steps.js:105"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 510748099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 56,
+            "name": "GET IN TOUCH should be visible",
+            "match": {
+              "location": "features\\stepDefination\\steps.js:109"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 98783699
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "name",
+                      "Muhammad Bilal 1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "email",
+                      "bilal1@test.com"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "subject",
+                      "Test Subject 1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "message",
+                      "This is a test message 1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "When ",
+            "line": 57,
+            "name": "the user enters contact details:",
+            "match": {
+              "location": "features\\stepDefination\\steps.js:113"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 60068099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 63,
+            "name": "the user uploads a file \"testfile.txt\"",
+            "match": {
+              "location": "features\\stepDefination\\steps.js:122"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16806900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 64,
+            "name": "the user clicks on Submit button",
+            "match": {
+              "location": "features\\stepDefination\\steps.js:128"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6642265700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 65,
+            "name": "the user confirms the alert",
+            "match": {
+              "location": "features\\stepDefination\\steps.js:134"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2053499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 66,
+            "name": "Success! Your details have been submitted successfully. should be visible",
+            "match": {
+              "location": "features\\stepDefination\\steps.js:139"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7999100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 67,
+            "name": "the user clicks on Home button",
+            "match": {
+              "location": "features\\stepDefination\\steps.js:144"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1103105499
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 452213200
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ContactUs",
+            "line": 52
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "user-registration-on-automation-exercise-website",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "User Registration on Automation Exercise Website",
+    "tags": [],
+    "uri": "features\\Ecommerce.feature"
+  }
+]

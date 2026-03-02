@@ -1,0 +1,27 @@
+{
+  "name": "automationexercise",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test1": "cucumber-js --require features/**/*.js",
+    "contact1": "cucumber-js --tags @ContactUs",
+
+    "test": "cucumber-js --require features/stepDefination/*.js --format progress --format json:reports/cucumber-report.json --parallel 2",
+    "contact": "cucumber-js --tags @ContactUs --require features/**/*.js --format progress --format json:reports/cucumber-report.json --parallel 2",
+    "report": "node reports/report.js",
+    "test:report": "npm run test && npm run report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.7.0",
+    "@cucumber/html-formatter": "^20.0.0",
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.3.0",
+    "cucumber-html-reporter": "^6.0.0",
+    "multiple-cucumber-html-reporter": "^3.10.0",
+    "playwright": "^1.58.2"
+  }
+}
