@@ -1,6 +1,7 @@
 const { SignUpPage } = require('./SignUpPage');
 const { LoginLogoutPage } = require('./LoginLogoutPage');
 const { ContactUs } = require('./ContactUs');
+const {AddProduct} =require ('./AddProduct')
 const { expect } = require('@playwright/test');
 class POManager {
 
@@ -9,6 +10,7 @@ class POManager {
         this.signUpPage = new SignUpPage(this.page);
         this.loginLogoutPage = new LoginLogoutPage(this.page);
         this.contactUs = new ContactUs(this.page);
+        this.addProduct= new AddProduct(this.page);
     }
 
 
@@ -21,6 +23,8 @@ class POManager {
     getContactUs() {
         return this.contactUs;
     }
-
+    getAddProduct(){
+        return this.addProduct;
+    }
 }
 module.exports = { POManager };

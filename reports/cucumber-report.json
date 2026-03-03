@@ -4,17 +4,17 @@
     "elements": [
       {
         "description": "",
-        "id": "user-registration-on-automation-exercise-website;submit-contact-us-form-successfully",
+        "id": "user-registration-on-automation-exercise-website;add-two-products-to-the-cart-and-verify",
         "keyword": "Scenario",
-        "line": 53,
-        "name": "Submit Contact Us form successfully",
+        "line": 70,
+        "name": "Add two products to the cart and verify",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 809623499
+              "duration": 3648074500
             }
           },
           {
@@ -23,11 +23,11 @@
             "line": 7,
             "name": "the browser is launched",
             "match": {
-              "location": "features\\stepDefination\\steps.js:11"
+              "location": "features\\stepDefination\\steps.js:12"
             },
             "result": {
               "status": "passed",
-              "duration": 12407199
+              "duration": 193441100
             }
           },
           {
@@ -36,11 +36,11 @@
             "line": 8,
             "name": "the user navigates to \"https://automationexercise.com/\"",
             "match": {
-              "location": "features\\stepDefination\\steps.js:14"
+              "location": "features\\stepDefination\\steps.js:15"
             },
             "result": {
               "status": "passed",
-              "duration": 2619414999
+              "duration": 2934073500
             }
           },
           {
@@ -49,144 +49,89 @@
             "line": 9,
             "name": "the home page is visible successfully",
             "match": {
-              "location": "features\\stepDefination\\steps.js:17"
+              "location": "features\\stepDefination\\steps.js:18"
             },
             "result": {
               "status": "passed",
-              "duration": 44704700
+              "duration": 132094499
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 55,
-            "name": "the user clicks on Contact Us button",
+            "line": 71,
+            "name": "the user clicks on Products button",
             "match": {
-              "location": "features\\stepDefination\\steps.js:105"
+              "location": "features\\stepDefination\\steps.js:153"
             },
             "result": {
               "status": "passed",
-              "duration": 510748099
+              "duration": 11080989900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 72,
+            "name": "the user adds the first product to cart and clicks Continue Shopping",
+            "match": {
+              "location": "features\\stepDefination\\steps.js:158"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1507270599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 73,
+            "name": "the user adds the second product to cart",
+            "match": {
+              "location": "features\\stepDefination\\steps.js:165"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 302737499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 74,
+            "name": "the user clicks on View Cart button",
+            "match": {
+              "location": "features\\stepDefination\\steps.js:169"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1122425200
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 56,
-            "name": "GET IN TOUCH should be visible",
+            "line": 75,
+            "name": "both products should be visible in the cart",
             "match": {
-              "location": "features\\stepDefination\\steps.js:109"
+              "location": "features\\stepDefination\\steps.js:174"
             },
             "result": {
               "status": "passed",
-              "duration": 98783699
-            }
-          },
-          {
-            "arguments": [
-              {
-                "rows": [
-                  {
-                    "cells": [
-                      "name",
-                      "Muhammad Bilal 1"
-                    ]
-                  },
-                  {
-                    "cells": [
-                      "email",
-                      "bilal1@test.com"
-                    ]
-                  },
-                  {
-                    "cells": [
-                      "subject",
-                      "Test Subject 1"
-                    ]
-                  },
-                  {
-                    "cells": [
-                      "message",
-                      "This is a test message 1"
-                    ]
-                  }
-                ]
-              }
-            ],
-            "keyword": "When ",
-            "line": 57,
-            "name": "the user enters contact details:",
-            "match": {
-              "location": "features\\stepDefination\\steps.js:113"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 60068099
+              "duration": 45082200
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 63,
-            "name": "the user uploads a file \"testfile.txt\"",
+            "line": 76,
+            "name": "the user verifies the products prices, quantities, and total price",
             "match": {
-              "location": "features\\stepDefination\\steps.js:122"
+              "location": "features\\stepDefination\\steps.js:179"
             },
             "result": {
               "status": "passed",
-              "duration": 16806900
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 64,
-            "name": "the user clicks on Submit button",
-            "match": {
-              "location": "features\\stepDefination\\steps.js:128"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 6642265700
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 65,
-            "name": "the user confirms the alert",
-            "match": {
-              "location": "features\\stepDefination\\steps.js:134"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2053499
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 66,
-            "name": "Success! Your details have been submitted successfully. should be visible",
-            "match": {
-              "location": "features\\stepDefination\\steps.js:139"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 7999100
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 67,
-            "name": "the user clicks on Home button",
-            "match": {
-              "location": "features\\stepDefination\\steps.js:144"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1103105499
+              "duration": 85178400
             }
           },
           {
@@ -194,14 +139,14 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 452213200
+              "duration": 363307099
             }
           }
         ],
         "tags": [
           {
-            "name": "@ContactUs",
-            "line": 52
+            "name": "@AddProduct",
+            "line": 69
           }
         ],
         "type": "scenario"

@@ -4,6 +4,7 @@ const { setDefaultTimeout } = require('@cucumber/cucumber');
 const { SignUpPage } = require('../../tests/PageObject/SignUpPage');
 const { LoginLogoutPage } = require('../../tests/PageObject/LoginLogoutPage');
 const { ContactUs } = require('../../tests/PageObject/ContactUs');
+const { AddProduct } = require('../../tests/PageObject/AddProduct');
 const path = require('path');
 const { TIMEOUT } = require('dns');
 setDefaultTimeout(100000);
@@ -145,4 +146,36 @@ When('the user clicks on Home button', async function () {
 
     await this.poManager.getContactUs().clickHome();
 
+});
+
+
+////////////////*****Add Product********////////////////
+When('the user clicks on Products button', async function () {
+    await this.page.locator('a[href="/products"]').click();
+    await this.page.waitForLoadState('networkidle');
+});
+
+When('the user adds the first product to cart and clicks Continue Shopping', async function () {
+  
+    await this.poManager.getAddProduct().addProductByIndex(0);
+    await this.poManager.getAddProduct().clickContinueShopping();
+    
+});
+
+When('the user adds the second product to cart', async function () {
+    await this.poManager.getAddProduct().addProductByIndex(1);
+});
+
+When('the user clicks on View Cart button', async function () {
+    await this.poManager.getAddProduct().clickViewCart();
+    
+});
+
+Then('both products should be visible in the cart', async function () {
+    await this.poManager.getAddProduct().verifyCartProducts(2);
+    
+});
+
+Then('the user verifies the products prices, quantities, and total price', async function () {
+    await this.poManager.getAddProduct().verifyPricesQuantitiesTotals();
 });
