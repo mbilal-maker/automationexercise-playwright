@@ -5,6 +5,8 @@ const { SignUpPage } = require('../../tests/PageObject/SignUpPage');
 const { LoginLogoutPage } = require('../../tests/PageObject/LoginLogoutPage');
 const { ContactUs } = require('../../tests/PageObject/ContactUs');
 const { AddProduct } = require('../../tests/PageObject/AddProduct');
+const {VerifyProductQuantity}= require('../../tests/PageObject/VerifyProductQuantity');
+const {RegisterWhileCheckout}= require('../../tests/PageObject/registerwhilecheckout');
 const path = require('path');
 const { TIMEOUT } = require('dns');
 setDefaultTimeout(100000);
@@ -178,4 +180,116 @@ Then('both products should be visible in the cart', async function () {
 
 Then('the user verifies the products prices, quantities, and total price', async function () {
     await this.poManager.getAddProduct().verifyPricesQuantitiesTotals();
+});
+
+
+//////**********Verify Product Quantity *********///////////
+Given('the home page should be visible successfully', async function () {
+  await expect(this.page).toHaveURL(/automationexercise/);
+});
+
+When('the user clicks on "View Product" for first product', async function () {
+  await this.poManager.getverifyProductQuantityPage().clickFirstViewProduct();
+});
+
+Then('the product detail page should be visible', async function () {
+  await this.poManager.getverifyProductQuantityPage().verifyProductDetailPage();
+});
+
+When('the user increases product quantity to {string}', async function (qty) {
+  await this.poManager.getverifyProductQuantityPage().setProductQuantity(qty);
+});
+
+When('the user clicks on "Add to cart" button', async function () {
+  await this.poManager.getverifyProductQuantityPage().clickAddToCart();
+});
+
+When('the user clicks on "View Cart" button', async function () {
+  await this.poManager.getverifyProductQuantityPage().clickViewCart();
+});
+
+Then('the product should be displayed in cart with quantity {string}', async function (expectedQty) {
+  await this.poManager.getverifyProductQuantityPage().verifyProductQuantityInCart(expectedQty);
+});
+
+
+///////******** Registers During Checkout*/////////////////////
+
+// features/stepDefination/steps.js
+
+When('the user adds first product to cart', async function () {
+  await this.poManager.getRegisterWhileCheckoutPage().addFirstProductToCart();
+});
+
+When('the user clicks on Cart button', async function () {
+    await this.page.pause();
+    await this.poManager.getRegisterWhileCheckoutPage().clickCart();
+});
+
+Then('the cart page should be displayed', async function () {
+  await expect(this.page).toHaveURL(/view_cart/);
+});
+
+When('the user clicks on Proceed To Checkout button', async function () {
+  await this.poManager.getRegisterWhileCheckoutPage().clickProceedToCheckout();
+});
+
+When('the user clicks on Register Login button', async function () {
+  await this.poManager.getRegisterWhileCheckoutPage().clickRegisterLogin();
+});
+
+When('the user enters signup name {string}', async function (name) {
+  await this.poManager.getRegisterWhileCheckoutPage().enterSignupName(name);
+});
+
+When('the user enters signup email {string}', async function (email) {
+  await this.poManager.getRegisterWhileCheckoutPage().enterSignupEmail(email);
+});
+
+When('the user clicks on Signup button', async function () {
+  await this.poManager.getRegisterWhileCheckoutPage().clickButton('Signup');
+});
+
+When('the user fills account information', async function () {
+  await this.poManager.getRegisterWhileCheckoutPage().fillAccountInformation();
+});
+
+When('the user clicks on Create Account button', async function () {
+  await this.poManager.getRegisterWhileCheckoutPage().clickButton('Create Account');
+});
+
+Then('ACCOUNT CREATED! should be visible', async function () {
+  await expect(this.page.locator('text=ACCOUNT CREATED!')).toBeVisible();
+});
+
+When('the user clicks on Continue button', async function () {
+  await this.poManager.getRegisterWhileCheckoutPage().clickButton('Continue');
+});
+
+Then('Logged in as BilalTest should be visible', async function () {
+  await expect(this.page.locator('text=Logged in as BilalTest')).toBeVisible();
+});
+
+Then('the address details and review order should be visible', async function () {
+  await this.poManager.getRegisterWhileCheckoutPage().verifyAddressAndReview();
+});
+
+When('the user enters comment Test order automation', async function () {
+  await this.poManager.getRegisterWhileCheckoutPage().enterComment('Test order automation');
+});
+
+When('the user clicks on Place Order button', async function () {
+  await this.poManager.getRegisterWhileCheckoutPage().clickButton('Place Order');
+});
+
+When('the user enters payment details', async function () {
+  await this.poManager.getRegisterWhileCheckoutPage().enterPaymentDetails();
+});
+
+When('the user clicks on Pay and Confirm Order button', async function () {
+  await this.poManager.getRegisterWhileCheckoutPage().clickButton('Pay and Confirm Order');
+});
+
+Then('Your order has been placed successfully! should be visible', async function () {
+  await expect(this.page.locator('text=Your order has been placed successfully!')).toBeVisible();
 });

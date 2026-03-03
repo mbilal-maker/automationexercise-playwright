@@ -1,7 +1,9 @@
 const { SignUpPage } = require('./SignUpPage');
 const { LoginLogoutPage } = require('./LoginLogoutPage');
 const { ContactUs } = require('./ContactUs');
-const {AddProduct} =require ('./AddProduct')
+const {AddProduct} =require ('./AddProduct');
+const {VerifyProductQuantity}= require('./VerifyProductQuantity');
+const {RegisterWhileCheckout}=require('./registerwhilecheckout');
 const { expect } = require('@playwright/test');
 class POManager {
 
@@ -11,6 +13,10 @@ class POManager {
         this.loginLogoutPage = new LoginLogoutPage(this.page);
         this.contactUs = new ContactUs(this.page);
         this.addProduct= new AddProduct(this.page);
+        this.verifyProductQuantityPage = new VerifyProductQuantity(this.page);
+        this.registerWhileCheckoutPage = new RegisterWhileCheckout(page);
+
+
     }
 
 
@@ -25,6 +31,12 @@ class POManager {
     }
     getAddProduct(){
         return this.addProduct;
+    }
+    getverifyProductQuantityPage(){
+        return this.verifyProductQuantityPage;
+    }
+    getRegisterWhileCheckoutPage(){
+        return this.registerWhileCheckoutPage;
     }
 }
 module.exports = { POManager };

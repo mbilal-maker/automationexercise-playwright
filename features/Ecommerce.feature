@@ -74,3 +74,55 @@ Feature: User Registration on Automation Exercise Website
     And the user clicks on View Cart button
     Then both products should be visible in the cart
     And the user verifies the products prices, quantities, and total price
+
+@ProductQty
+Scenario: Verify Product quantity in Cart
+
+  Given the browser is launched
+  And the user navigates to "https://automationexercise.com/"
+  Then the home page should be visible successfully
+
+  When the user clicks on "View Product" for first product
+  Then the product detail page should be visible
+
+  When the user increases product quantity to "4"
+  And the user clicks on "Add to cart" button
+  And the user clicks on "View Cart" button
+
+  Then the product should be displayed in cart with quantity "4"
+
+@RegisterCheckout
+  Scenario: User registers during checkout and places order successfully
+
+    Given the browser is launched
+    And the user navigates to "https://automationexercise.com/"
+    Then the home page is visible successfully
+
+    When the user adds first product to cart
+    And the user clicks on Cart button
+    Then the cart page should be displayed
+
+    When the user clicks on Proceed To Checkout button
+    And the user clicks on Register Login button
+
+    And the user enters signup name "BilalTest"
+    And the user enters signup email "bilaltest12345@gmail.com"
+    And the user clicks on Signup button
+
+    And the user fills account information
+    And the user clicks on Create Account button
+    Then ACCOUNT CREATED! should be visible
+    And the user clicks on Continue button
+
+    Then Logged in as BilalTest should be visible
+
+    When the user clicks on Cart button
+    And the user clicks on Proceed To Checkout button
+    Then the address details and review order should be visible
+
+    When the user enters comment Test order automation
+    And the user clicks on Place Order button
+    And the user enters payment details
+    And the user clicks on Pay and Confirm Order button
+
+    Then Your order has been placed successfully! should be visible

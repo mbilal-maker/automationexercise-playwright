@@ -4,17 +4,17 @@
     "elements": [
       {
         "description": "",
-        "id": "user-registration-on-automation-exercise-website;add-two-products-to-the-cart-and-verify",
+        "id": "user-registration-on-automation-exercise-website;verify-product-quantity-in-cart",
         "keyword": "Scenario",
-        "line": 70,
-        "name": "Add two products to the cart and verify",
+        "line": 79,
+        "name": "Verify Product quantity in Cart",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 3648074500
+              "duration": 622291699
             }
           },
           {
@@ -23,11 +23,11 @@
             "line": 7,
             "name": "the browser is launched",
             "match": {
-              "location": "features\\stepDefination\\steps.js:12"
+              "location": "features\\stepDefination\\steps.js:13"
             },
             "result": {
               "status": "passed",
-              "duration": 193441100
+              "duration": 10856000
             }
           },
           {
@@ -36,11 +36,11 @@
             "line": 8,
             "name": "the user navigates to \"https://automationexercise.com/\"",
             "match": {
-              "location": "features\\stepDefination\\steps.js:15"
+              "location": "features\\stepDefination\\steps.js:16"
             },
             "result": {
               "status": "passed",
-              "duration": 2934073500
+              "duration": 2340781299
             }
           },
           {
@@ -49,89 +49,128 @@
             "line": 9,
             "name": "the home page is visible successfully",
             "match": {
-              "location": "features\\stepDefination\\steps.js:18"
+              "location": "features\\stepDefination\\steps.js:19"
             },
             "result": {
               "status": "passed",
-              "duration": 132094499
+              "duration": 69660700
             }
           },
           {
             "arguments": [],
-            "keyword": "When ",
-            "line": 71,
-            "name": "the user clicks on Products button",
+            "keyword": "Given ",
+            "line": 81,
+            "name": "the browser is launched",
             "match": {
-              "location": "features\\stepDefination\\steps.js:153"
+              "location": "features\\stepDefination\\steps.js:13"
             },
             "result": {
               "status": "passed",
-              "duration": 11080989900
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 72,
-            "name": "the user adds the first product to cart and clicks Continue Shopping",
-            "match": {
-              "location": "features\\stepDefination\\steps.js:158"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1507270599
+              "duration": 247399
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 73,
-            "name": "the user adds the second product to cart",
+            "line": 82,
+            "name": "the user navigates to \"https://automationexercise.com/\"",
             "match": {
-              "location": "features\\stepDefination\\steps.js:165"
+              "location": "features\\stepDefination\\steps.js:16"
             },
             "result": {
               "status": "passed",
-              "duration": 302737499
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 74,
-            "name": "the user clicks on View Cart button",
-            "match": {
-              "location": "features\\stepDefination\\steps.js:169"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1122425200
+              "duration": 557447700
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 75,
-            "name": "both products should be visible in the cart",
+            "line": 83,
+            "name": "the home page should be visible successfully",
             "match": {
-              "location": "features\\stepDefination\\steps.js:174"
+              "location": "features\\stepDefination\\steps.js:186"
             },
             "result": {
               "status": "passed",
-              "duration": 45082200
+              "duration": 28499400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 85,
+            "name": "the user clicks on \"View Product\" for first product",
+            "match": {
+              "location": "features\\stepDefination\\steps.js:190"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 549525999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 86,
+            "name": "the product detail page should be visible",
+            "match": {
+              "location": "features\\stepDefination\\steps.js:194"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 41872900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 88,
+            "name": "the user increases product quantity to \"4\"",
+            "match": {
+              "location": "features\\stepDefination\\steps.js:198"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 42695999
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 76,
-            "name": "the user verifies the products prices, quantities, and total price",
+            "line": 89,
+            "name": "the user clicks on \"Add to cart\" button",
             "match": {
-              "location": "features\\stepDefination\\steps.js:179"
+              "location": "features\\stepDefination\\steps.js:202"
             },
             "result": {
               "status": "passed",
-              "duration": 85178400
+              "duration": 66382700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 90,
+            "name": "the user clicks on \"View Cart\" button",
+            "match": {
+              "location": "features\\stepDefination\\steps.js:206"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 870195399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 92,
+            "name": "the product should be displayed in cart with quantity \"4\"",
+            "match": {
+              "location": "features\\stepDefination\\steps.js:210"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 40180700
             }
           },
           {
@@ -139,14 +178,14 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 363307099
+              "duration": 362761800
             }
           }
         ],
         "tags": [
           {
-            "name": "@AddProduct",
-            "line": 69
+            "name": "@ProductQty",
+            "line": 78
           }
         ],
         "type": "scenario"
