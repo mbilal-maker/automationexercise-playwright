@@ -106,13 +106,13 @@ Scenario: Verify Product quantity in Cart
     And the user clicks on Register Login button
 
     And the user enters signup name "BilalTest"
-    And the user enters signup email "bilaltest12345@gmail.com"
-    And the user clicks on Signup button
+    And the user enters signup email "bilaltestvdjv23dgf5@gmail.com"
+    And the user clicks on Signup button for registration
 
     And the user fills account information
-    And the user clicks on Create Account button
-    Then ACCOUNT CREATED! should be visible
-    And the user clicks on Continue button
+    And the user clicks on Create Account button while signup
+    Then ACCOUNT CREATED! text should be visible
+    And the user clicks on Continue button to proceed for checkout
 
     Then Logged in as BilalTest should be visible
 

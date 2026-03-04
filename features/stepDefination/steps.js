@@ -222,7 +222,7 @@ When('the user adds first product to cart', async function () {
 });
 
 When('the user clicks on Cart button', async function () {
-    await this.page.pause();
+    //await this.page.pause();
     await this.poManager.getRegisterWhileCheckoutPage().clickCart();
 });
 
@@ -246,7 +246,7 @@ When('the user enters signup email {string}', async function (email) {
   await this.poManager.getRegisterWhileCheckoutPage().enterSignupEmail(email);
 });
 
-When('the user clicks on Signup button', async function () {
+When('the user clicks on Signup button for registration', async function () {
   await this.poManager.getRegisterWhileCheckoutPage().clickButton('Signup');
 });
 
@@ -254,15 +254,15 @@ When('the user fills account information', async function () {
   await this.poManager.getRegisterWhileCheckoutPage().fillAccountInformation();
 });
 
-When('the user clicks on Create Account button', async function () {
+When('the user clicks on Create Account button while signup', async function () {
   await this.poManager.getRegisterWhileCheckoutPage().clickButton('Create Account');
 });
 
-Then('ACCOUNT CREATED! should be visible', async function () {
+Then('ACCOUNT CREATED! text should be visible', async function () {
   await expect(this.page.locator('text=ACCOUNT CREATED!')).toBeVisible();
 });
 
-When('the user clicks on Continue button', async function () {
+When('the user clicks on Continue button to proceed for checkout', async function () {
   await this.poManager.getRegisterWhileCheckoutPage().clickButton('Continue');
 });
 
@@ -291,5 +291,5 @@ When('the user clicks on Pay and Confirm Order button', async function () {
 });
 
 Then('Your order has been placed successfully! should be visible', async function () {
-  await expect(this.page.locator('text=Your order has been placed successfully!')).toBeVisible();
+  await this.poManager.getRegisterWhileCheckoutPage().verifyOrderSuccess();
 });

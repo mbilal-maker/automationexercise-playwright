@@ -30,28 +30,22 @@ class RegisterWhileCheckout {
     this.cityInput = this.page.locator('#city');
     this.zipcodeInput = this.page.locator('#zipcode');
     this.mobileNumberInput = this.page.locator('#mobile_number');
-
-    this.createAccountBtn = this.page.locator('[data-qa="create-account"], button:has-text("Create Account")');
-    this.accountCreatedMsg = this.page.locator('[data-qa="account-created"], text=ACCOUNT CREATED!');
-    this.continueBtn = this.page.locator('[data-qa="continue-button"], a:has-text("Continue")');
-
-    // Checkout page texts
-    this.addressDetailsText = this.page.locator('text=Address Details');
-    this.reviewOrderText = this.page.locator('text=Review Your Order');
-
-    // Place order / comment
-    this.commentTextArea = this.page.locator('textarea[name="message"]');
-    this.placeOrderBtn = this.page.locator('a:has-text("Place Order")');
-
-    // Payment
-    this.nameOnCardInput = this.page.locator('[data-qa="name-on-card"]');
-    this.cardNumberInput = this.page.locator('[data-qa="card-number"]');
-    this.cvcInput = this.page.locator('[data-qa="cvc"]');
-    this.expiryMonthInput = this.page.locator('[data-qa="expiry-month"]');
-    this.expiryYearInput = this.page.locator('[data-qa="expiry-year"]');
-
-    this.payConfirmBtn = this.page.locator('[data-qa="pay-button"], button:has-text("Pay and Confirm Order")');
-    this.successOrderMsg = this.page.locator('text=Your order has been placed successfully!');
+    this.createAccountBtn = page.locator('[data-qa="create-account"], button:has-text("Create Account")');
+    this.accountCreatedMsg = page.locator('[data-qa="account-created"], text=ACCOUNT CREATED!');
+    this.continueBtn = page.locator('[data-qa="continue-button"], a:has-text("Continue")');
+    this.addressDetailsText = page.locator('text=Address Details');
+    this.reviewOrderText =page.locator('text=Review Your Order');
+    this.commentTextArea = page.locator('textarea[name="message"]');
+    this.placeOrderBtn = page.locator('a:has-text("Place Order")');
+    this.nameOnCardInput = page.locator('[data-qa="name-on-card"]');
+    this.cardNumberInput = page.locator('[data-qa="card-number"]');
+    this.cvcInput = page.locator('[data-qa="cvc"]');
+    this.expiryMonthInput = page.locator('[data-qa="expiry-month"]');
+    this.expiryYearInput = page.locator('[data-qa="expiry-year"]');
+    this.payConfirmBtn = page.locator('[data-qa="pay-button"], button:has-text("Pay and Confirm Order")');
+    this.successOrderMsg = page.locator('h2[data-qa="order-placed"]:has-text("Order Placed!")');
+    this.continueBtn = page.locator('[data-qa="continue-button"]');
+    this.homeLink = page.locator('a[href="/"]:has-text("Home")');
   }
 
   async addFirstProductToCart() {
@@ -150,12 +144,11 @@ class RegisterWhileCheckout {
 
   async verifyOrderSuccess() {
     await expect(this.successOrderMsg).toBeVisible();
+    await this.continueBtn.click();
+    await expect(this.homeLink).toBeVisible();
   }
 
-  /**
-   * Updated clickButton to handle special cases used in your scenario.
-   * This is the key fix for "Proceed To Checkout" and "Register / Login".
-   */
+
   async clickButton(name) {
     const text = String(name).trim();
 
