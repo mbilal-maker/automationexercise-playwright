@@ -151,44 +151,31 @@ class RegisterWhileCheckout {
 
   async clickButton(name) {
     const text = String(name).trim();
-
-    // ✅ Special: Cart
     if (/^Cart$/i.test(text)) {
       await this.clickCart();
       return;
     }
-
-    // ✅ Special: Proceed To Checkout (not a link role, it's a.check_out without href)
     if (/^Proceed To Checkout$/i.test(text)) {
       await this.clickProceedToCheckout();
       return;
     }
 
-    // ✅ Special: Register / Login (inside modal)
     if (/^Register\s*\/\s*Login$/i.test(text)) {
       await this.clickRegisterLogin();
       return;
     }
-
-    // ✅ Special: Continue (can be <a> with data-qa)
     if (/^Continue$/i.test(text)) {
       await this.clickContinue();
       return;
     }
-
-    // ✅ Special: Create Account (data-qa)
     if (/^Create Account$/i.test(text)) {
       await this.clickCreateAccount();
       return;
     }
-
-    // ✅ Special: Signup (data-qa)
     if (/^Signup$/i.test(text)) {
       await this.clickSignup();
       return;
     }
-
-    // Generic fallback: try button then link then input
     const generic = this.page
       .locator(`button:has-text("${text}"), a:has-text("${text}"), input[value="${text}"]`)
       .first();

@@ -35,35 +35,22 @@ class ContactUs {
     async uploadFile(filePath) {
         await this.uploadFileInput.setInputFiles(filePath);
     }
-    ///////////////////////////////////////////////////////////////////////////////
     async clickSubmit() {
-        // Ensure page fully ready
         await this.page.waitForLoadState('domcontentloaded');
         await this.page.waitForLoadState('networkidle');
-
-        // Wait until form exists
         await this.page.locator('#contact-us-form').waitFor({ state: 'attached' });
-
-        // Scroll and make submit visible
         await this.submitBtn.scrollIntoViewIfNeeded();
         await this.submitBtn.waitFor({ state: 'visible' });
-
-        // Set up one-time dialog handler
         this.page.once('dialog', async (dialog) => {
             console.log("Dialog appeared with message:", dialog.message());
             await dialog.accept();
         });
-
-        // Click submit (dialog will be handled automatically)
         await this.submitBtn.click();
-
-        // Wait for success style change
         await this.page.waitForFunction(() => {
             const el = document.querySelector('#contact-page .alert-success');
             return el && el.style.display === 'block';
         });
     }
-    ///////////////////////////////////////////////////////
     async acceptAlert() {
         this.page.once('dialog', async dialog => {
             await dialog.accept();
