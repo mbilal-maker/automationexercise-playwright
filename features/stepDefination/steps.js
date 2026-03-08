@@ -7,6 +7,7 @@ const { ContactUs } = require('../../tests/PageObject/ContactUs');
 const { AddProduct } = require('../../tests/PageObject/AddProduct');
 const {VerifyProductQuantity}= require('../../tests/PageObject/VerifyProductQuantity');
 const {RegisterWhileCheckout}= require('../../tests/PageObject/registerwhilecheckout');
+const { CategoryProductsPage } = require('../../tests/PageObject/categoryProductsPage');
 const path = require('path');
 const { TIMEOUT } = require('dns');
 setDefaultTimeout(100000);
@@ -292,4 +293,37 @@ When('the user clicks on Pay and Confirm Order button', async function () {
 
 Then('Your order has been placed successfully! should be visible', async function () {
   await this.poManager.getRegisterWhileCheckoutPage().verifyOrderSuccess();
+});
+
+
+
+////////////////*****Product Categories********/////////////
+
+Given('the new browser is launched', async function () {
+  //already lounched
+});
+
+Given('the user navigates to url {string}', async function (url) {
+  //already on same URL
+});
+
+Then('categories should be visible on the left sidebar', async function () {
+  await this.poManager.getCategoryProductsPage().verifyCategoriesVisible();
+});
+
+When('the user expands the {string} category', async function (categoryName) {
+  await this.poManager.getCategoryProductsPage().expandCategory(categoryName);
+});
+
+When('the user clicks the {string} sub-category under {string}',async function (subCategoryName, parentCategoryName) {
+    await this.poManager.getCategoryProductsPage().clickSubCategory(parentCategoryName, subCategoryName);
+  }
+);
+
+Then('the category page heading should be {string}', async function (expectedHeading) {
+  await this.poManager.getCategoryProductsPage().verifyCategoryHeadingExact(expectedHeading);
+});
+
+Then('the category page heading should contain {string}', async function (expectedText) {
+  await this.poManager.getCategoryProductsPage().verifyCategoryHeadingContains(expectedText);
 });

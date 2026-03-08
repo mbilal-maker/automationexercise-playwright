@@ -4,6 +4,7 @@ const { ContactUs } = require('./ContactUs');
 const {AddProduct} =require ('./AddProduct');
 const {VerifyProductQuantity}= require('./VerifyProductQuantity');
 const {RegisterWhileCheckout}=require('./registerwhilecheckout');
+const {CategoryProductsPage}= require ('./categoryProductsPage');
 const { expect } = require('@playwright/test');
 class POManager {
 
@@ -14,7 +15,8 @@ class POManager {
         this.contactUs = new ContactUs(this.page);
         this.addProduct= new AddProduct(this.page);
         this.verifyProductQuantityPage = new VerifyProductQuantity(this.page);
-        this.registerWhileCheckoutPage = new RegisterWhileCheckout(page);
+        this.registerWhileCheckoutPage = new RegisterWhileCheckout(this.page);
+        this.categoryProductsPage = new CategoryProductsPage(this.page);
 
 
     }
@@ -37,6 +39,9 @@ class POManager {
     }
     getRegisterWhileCheckoutPage(){
         return this.registerWhileCheckoutPage;
+    }
+    getCategoryProductsPage(){
+        return this.categoryProductsPage;
     }
 }
 module.exports = { POManager };

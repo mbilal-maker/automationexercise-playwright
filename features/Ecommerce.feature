@@ -126,3 +126,17 @@ Scenario: Verify Product quantity in Cart
     And the user clicks on Pay and Confirm Order button
 
     Then Your order has been placed successfully! should be visible
+
+@ViewProductCategory
+    Scenario: User views Women and Men category products
+    Given the new browser is launched
+    And the user navigates to url "https://automationexercise.com/"
+    Then categories should be visible on the left sidebar
+
+    When the user expands the "Women" category
+    And the user clicks the "Tops" sub-category under "Women"
+    Then the category page heading should be "WOMEN - TOPS PRODUCTS"
+
+    When the user expands the "Men" category
+    And the user clicks the "Tshirts" sub-category under "Men"
+    Then the category page heading should contain "MEN"
