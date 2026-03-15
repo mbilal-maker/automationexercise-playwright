@@ -8,6 +8,7 @@ const { AddProduct } = require('../../tests/PageObject/AddProduct');
 const {VerifyProductQuantity}= require('../../tests/PageObject/VerifyProductQuantity');
 const {RegisterWhileCheckout}= require('../../tests/PageObject/registerwhilecheckout');
 const { CategoryProductsPage } = require('../../tests/PageObject/categoryProductsPage');
+const {ScrollUpDownPage}=require('../../tests/PageObject/ScrollUpDownPage');
 const path = require('path');
 const { TIMEOUT } = require('dns');
 setDefaultTimeout(100000);
@@ -327,3 +328,27 @@ Then('the category page heading should be {string}', async function (expectedHea
 Then('the category page heading should contain {string}', async function (expectedText) {
   await this.poManager.getCategoryProductsPage().verifyCategoryHeadingContains(expectedText);
 });
+
+
+
+////////////////////******Scroll Down********* */
+When('the user scrolls down to the bottom of the page', async function () {
+  await this.poManager.getScrollUpDownPage().scrollToBottom();
+});
+
+Then('SUBSCRIPTION should be visible', async function () {
+  await this.poManager.getScrollUpDownPage().verifySubscriptionVisible();
+});
+
+When('the user clicks on the scroll up arrow button', async function () {
+  await this.poManager.getScrollUpDownPage().clickScrollUpArrow();
+});
+
+Then(
+  'the page should be scrolled up and {string} text should be visible',
+  async function (expectedText) {
+    await this.poManager
+      .getScrollUpDownPage()
+      .verifyScrolledUpAndHeroTextVisible(expectedText);
+  }
+);

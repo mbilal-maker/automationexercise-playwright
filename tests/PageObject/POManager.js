@@ -1,10 +1,12 @@
 const { SignUpPage } = require('./SignUpPage');
 const { LoginLogoutPage } = require('./LoginLogoutPage');
 const { ContactUs } = require('./ContactUs');
-const {AddProduct} =require ('./AddProduct');
-const {VerifyProductQuantity}= require('./VerifyProductQuantity');
-const {RegisterWhileCheckout}=require('./registerwhilecheckout');
-const {CategoryProductsPage}= require ('./categoryProductsPage');
+const { AddProduct } = require('./AddProduct');
+const { VerifyProductQuantity } = require('./VerifyProductQuantity');
+const { RegisterWhileCheckout } = require('./registerwhilecheckout');
+const { CategoryProductsPage } = require('./categoryProductsPage');
+const { ScrollUpDownPage } = require('./ScrollUpDownPage');
+
 const { expect } = require('@playwright/test');
 class POManager {
 
@@ -13,11 +15,11 @@ class POManager {
         this.signUpPage = new SignUpPage(this.page);
         this.loginLogoutPage = new LoginLogoutPage(this.page);
         this.contactUs = new ContactUs(this.page);
-        this.addProduct= new AddProduct(this.page);
+        this.addProduct = new AddProduct(this.page);
         this.verifyProductQuantityPage = new VerifyProductQuantity(this.page);
         this.registerWhileCheckoutPage = new RegisterWhileCheckout(this.page);
         this.categoryProductsPage = new CategoryProductsPage(this.page);
-
+        this.scrollUpDownPage = new ScrollUpDownPage(this.page);
 
     }
 
@@ -31,17 +33,20 @@ class POManager {
     getContactUs() {
         return this.contactUs;
     }
-    getAddProduct(){
+    getAddProduct() {
         return this.addProduct;
     }
-    getverifyProductQuantityPage(){
+    getverifyProductQuantityPage() {
         return this.verifyProductQuantityPage;
     }
-    getRegisterWhileCheckoutPage(){
+    getRegisterWhileCheckoutPage() {
         return this.registerWhileCheckoutPage;
     }
-    getCategoryProductsPage(){
+    getCategoryProductsPage() {
         return this.categoryProductsPage;
+    }
+    getScrollUpDownPage() {
+        return this.scrollUpDownPage;
     }
 }
 module.exports = { POManager };

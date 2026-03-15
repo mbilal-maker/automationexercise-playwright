@@ -66,7 +66,7 @@ Feature: User Registration on Automation Exercise Website
     Then Success! Your details have been submitted successfully. should be visible
     When the user clicks on Home button
 
-@AddProduct
+  @AddProduct
   Scenario: Add two products to the cart and verify
     When the user clicks on Products button
     And the user adds the first product to cart and clicks Continue Shopping
@@ -75,23 +75,23 @@ Feature: User Registration on Automation Exercise Website
     Then both products should be visible in the cart
     And the user verifies the products prices, quantities, and total price
 
-@ProductQty
-Scenario: Verify Product quantity in Cart
+  @ProductQty
+  Scenario: Verify Product quantity in Cart
 
-  Given the browser is launched
-  And the user navigates to "https://automationexercise.com/"
-  Then the home page should be visible successfully
+    Given the browser is launched
+    And the user navigates to "https://automationexercise.com/"
+    Then the home page should be visible successfully
 
-  When the user clicks on "View Product" for first product
-  Then the product detail page should be visible
+    When the user clicks on "View Product" for first product
+    Then the product detail page should be visible
 
-  When the user increases product quantity to "4"
-  And the user clicks on "Add to cart" button
-  And the user clicks on "View Cart" button
+    When the user increases product quantity to "4"
+    And the user clicks on "Add to cart" button
+    And the user clicks on "View Cart" button
 
-  Then the product should be displayed in cart with quantity "4"
+    Then the product should be displayed in cart with quantity "4"
 
-@RegisterCheckout
+  @RegisterCheckout
   Scenario: User registers during checkout and places order successfully
 
     Given the browser is launched
@@ -127,8 +127,8 @@ Scenario: Verify Product quantity in Cart
 
     Then Your order has been placed successfully! should be visible
 
-@ViewProductCategory
-    Scenario: User views Women and Men category products
+  @ViewProductCategory
+  Scenario: User views Women and Men category products
     Given the new browser is launched
     And the user navigates to url "https://automationexercise.com/"
     Then categories should be visible on the left sidebar
@@ -140,3 +140,11 @@ Scenario: Verify Product quantity in Cart
     When the user expands the "Men" category
     And the user clicks the "Tshirts" sub-category under "Men"
     Then the category page heading should contain "MEN"
+
+  @ScrollUpDown
+  Scenario: Verify Scroll Up using Arrow button and Scroll Down functionality
+    Then the home page is visible successfully
+    When the user scrolls down to the bottom of the page
+    Then SUBSCRIPTION should be visible
+    When the user clicks on the scroll up arrow button
+    Then the page should be scrolled up and "Full-Fledged practice website for Automation Engineers" text should be visible
