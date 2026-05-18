@@ -10,6 +10,8 @@
     "registerCO": "cucumber-js --tags @RegisterCheckout",
     "productctg": "cucumber-js --tags @ViewProductCategory",
     "scrollup": "cucumber-js --tags @ScrollUpDown",
+    "mainslider": "cucumber-js --tags @MainSlider --require features/**/*.js --format progress --format json:reports/cucumber-report.json",
+
     "productqty": "cucumber-js --tags @ProductQty --require features/**/*.js --format progress --format json:reports/cucumber-report.json --parallel 2",
     "addproduct": "cucumber-js --tags @AddProduct --require features/**/*.js --format progress --format json:reports/cucumber-report.json --parallel 2",
     "test": "cucumber-js --require features/stepDefination/*.js --format progress --format json:reports/cucumber-report.json --parallel 2",

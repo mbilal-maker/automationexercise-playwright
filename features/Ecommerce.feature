@@ -148,3 +148,18 @@ Feature: User Registration on Automation Exercise Website
     Then SUBSCRIPTION should be visible
     When the user clicks on the scroll up arrow button
     Then the page should be scrolled up and "Full-Fledged practice website for Automation Engineers" text should be visible
+
+
+  @MainSlider
+Scenario: Verify main slider section with three carousel slides
+  Then the main slider section should be visible
+  And the slider should contain 3 carousel slides
+  And each slider should display Automation Exercise heading and CTA buttons
+  When the user opens slider slide 1
+  Then slider slide 1 should be active
+  When the user clicks the next slider arrow
+  Then slider slide 2 should be active
+  When the user clicks the next slider arrow
+  Then slider slide 3 should be active
+  When the user clicks the previous slider arrow
+  Then slider slide 2 should be active

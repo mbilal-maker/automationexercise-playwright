@@ -9,6 +9,7 @@ const {VerifyProductQuantity}= require('../../tests/PageObject/VerifyProductQuan
 const {RegisterWhileCheckout}= require('../../tests/PageObject/registerwhilecheckout');
 const { CategoryProductsPage } = require('../../tests/PageObject/categoryProductsPage');
 const {ScrollUpDownPage}=require('../../tests/PageObject/ScrollUpDownPage');
+const {MainSliderPage}= require('../../tests/PageObject/MainSliderPage');
 const path = require('path');
 const { TIMEOUT } = require('dns');
 setDefaultTimeout(100000);
@@ -352,3 +353,32 @@ Then(
       .verifyScrolledUpAndHeroTextVisible(expectedText);
   }
 );
+
+
+Then('the main slider section should be visible', async function () {
+  await this.poManager.getMainSliderPage().verifyMainSliderVisible();
+});
+
+Then('the slider should contain {int} carousel slides', async function (expectedCount) {
+  await this.poManager.getMainSliderPage().verifySlideCount(expectedCount);
+});
+
+Then('each slider should display Automation Exercise heading and CTA buttons', async function () {
+  await this.poManager.getMainSliderPage().verifySliderContent();
+});
+
+When('the user opens slider slide {int}', async function (slideNumber) {
+  await this.poManager.getMainSliderPage().goToSlide(slideNumber);
+});
+
+When('the user clicks the next slider arrow', async function () {
+  await this.poManager.getMainSliderPage().clickNextArrow();
+});
+
+When('the user clicks the previous slider arrow', async function () {
+  await this.poManager.getMainSliderPage().clickPreviousArrow();
+});
+
+Then('slider slide {int} should be active', async function (slideNumber) {
+  await this.poManager.getMainSliderPage().verifyActiveSlide(slideNumber);
+});

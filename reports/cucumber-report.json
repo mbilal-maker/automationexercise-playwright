@@ -4,17 +4,17 @@
     "elements": [
       {
         "description": "",
-        "id": "user-registration-on-automation-exercise-website;verify-product-quantity-in-cart",
+        "id": "user-registration-on-automation-exercise-website;verify-main-slider-section-with-three-carousel-slides",
         "keyword": "Scenario",
-        "line": 79,
-        "name": "Verify Product quantity in Cart",
+        "line": 154,
+        "name": "Verify main slider section with three carousel slides",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 622291699
+              "duration": 1876116100
             }
           },
           {
@@ -23,11 +23,11 @@
             "line": 7,
             "name": "the browser is launched",
             "match": {
-              "location": "features\\stepDefination\\steps.js:13"
+              "location": "features\\stepDefination\\steps.js:17"
             },
             "result": {
               "status": "passed",
-              "duration": 10856000
+              "duration": 485599
             }
           },
           {
@@ -36,11 +36,11 @@
             "line": 8,
             "name": "the user navigates to \"https://automationexercise.com/\"",
             "match": {
-              "location": "features\\stepDefination\\steps.js:16"
+              "location": "features\\stepDefination\\steps.js:20"
             },
             "result": {
               "status": "passed",
-              "duration": 2340781299
+              "duration": 2697830799
             }
           },
           {
@@ -49,128 +49,154 @@
             "line": 9,
             "name": "the home page is visible successfully",
             "match": {
-              "location": "features\\stepDefination\\steps.js:19"
+              "location": "features\\stepDefination\\steps.js:23"
             },
             "result": {
               "status": "passed",
-              "duration": 69660700
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 81,
-            "name": "the browser is launched",
-            "match": {
-              "location": "features\\stepDefination\\steps.js:13"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 247399
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 82,
-            "name": "the user navigates to \"https://automationexercise.com/\"",
-            "match": {
-              "location": "features\\stepDefination\\steps.js:16"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 557447700
+              "duration": 89560800
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 83,
-            "name": "the home page should be visible successfully",
+            "line": 155,
+            "name": "the main slider section should be visible",
             "match": {
-              "location": "features\\stepDefination\\steps.js:186"
+              "location": "features\\stepDefination\\steps.js:358"
             },
             "result": {
               "status": "passed",
-              "duration": 28499400
+              "duration": 7737699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 156,
+            "name": "the slider should contain 3 carousel slides",
+            "match": {
+              "location": "features\\stepDefination\\steps.js:362"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 21379899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 157,
+            "name": "each slider should display Automation Exercise heading and CTA buttons",
+            "match": {
+              "location": "features\\stepDefination\\steps.js:366"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 136578500
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 85,
-            "name": "the user clicks on \"View Product\" for first product",
+            "line": 158,
+            "name": "the user opens slider slide 1",
             "match": {
-              "location": "features\\stepDefination\\steps.js:190"
+              "location": "features\\stepDefination\\steps.js:370"
             },
             "result": {
               "status": "passed",
-              "duration": 549525999
+              "duration": 100227499
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 86,
-            "name": "the product detail page should be visible",
+            "line": 159,
+            "name": "slider slide 1 should be active",
             "match": {
-              "location": "features\\stepDefination\\steps.js:194"
+              "location": "features\\stepDefination\\steps.js:382"
             },
             "result": {
               "status": "passed",
-              "duration": 41872900
+              "duration": 12869999
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 88,
-            "name": "the user increases product quantity to \"4\"",
+            "line": 160,
+            "name": "the user clicks the next slider arrow",
             "match": {
-              "location": "features\\stepDefination\\steps.js:198"
+              "location": "features\\stepDefination\\steps.js:374"
             },
             "result": {
               "status": "passed",
-              "duration": 42695999
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 89,
-            "name": "the user clicks on \"Add to cart\" button",
-            "match": {
-              "location": "features\\stepDefination\\steps.js:202"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 66382700
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 90,
-            "name": "the user clicks on \"View Cart\" button",
-            "match": {
-              "location": "features\\stepDefination\\steps.js:206"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 870195399
+              "duration": 675077599
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 92,
-            "name": "the product should be displayed in cart with quantity \"4\"",
+            "line": 161,
+            "name": "slider slide 2 should be active",
             "match": {
-              "location": "features\\stepDefination\\steps.js:210"
+              "location": "features\\stepDefination\\steps.js:382"
             },
             "result": {
               "status": "passed",
-              "duration": 40180700
+              "duration": 19203900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 162,
+            "name": "the user clicks the next slider arrow",
+            "match": {
+              "location": "features\\stepDefination\\steps.js:374"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 661808200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 163,
+            "name": "slider slide 3 should be active",
+            "match": {
+              "location": "features\\stepDefination\\steps.js:382"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8712799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 164,
+            "name": "the user clicks the previous slider arrow",
+            "match": {
+              "location": "features\\stepDefination\\steps.js:378"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 677681199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 165,
+            "name": "slider slide 2 should be active",
+            "match": {
+              "location": "features\\stepDefination\\steps.js:382"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13231200
             }
           },
           {
@@ -178,14 +204,14 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 362761800
+              "duration": 369823000
             }
           }
         ],
         "tags": [
           {
-            "name": "@ProductQty",
-            "line": 78
+            "name": "@MainSlider",
+            "line": 153
           }
         ],
         "type": "scenario"

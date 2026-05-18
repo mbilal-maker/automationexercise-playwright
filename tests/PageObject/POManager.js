@@ -6,6 +6,7 @@ const { VerifyProductQuantity } = require('./VerifyProductQuantity');
 const { RegisterWhileCheckout } = require('./registerwhilecheckout');
 const { CategoryProductsPage } = require('./categoryProductsPage');
 const { ScrollUpDownPage } = require('./ScrollUpDownPage');
+const { MainSliderPage } = require('./MainSliderPage');
 
 const { expect } = require('@playwright/test');
 class POManager {
@@ -20,7 +21,7 @@ class POManager {
         this.registerWhileCheckoutPage = new RegisterWhileCheckout(this.page);
         this.categoryProductsPage = new CategoryProductsPage(this.page);
         this.scrollUpDownPage = new ScrollUpDownPage(this.page);
-
+        this.mainSliderPage = new MainSliderPage(this.page);
     }
 
 
@@ -47,6 +48,9 @@ class POManager {
     }
     getScrollUpDownPage() {
         return this.scrollUpDownPage;
+    }
+    getMainSliderPage() {
+        return this.mainSliderPage;
     }
 }
 module.exports = { POManager };
